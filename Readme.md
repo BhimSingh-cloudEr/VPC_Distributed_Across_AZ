@@ -6,6 +6,24 @@ AWS VPC, Subnets, Instances, and Gateways Setup using Terraform
 This project sets up a Virtual Private Cloud (VPC) on AWS, with public and private subnets distributed across availability zones (AZs) in the ap-south-1 region. The setup includes instances in each subnet, an internet gateway for public internet access, and a NAT gateway to allow outbound internet traffic from instances in the private subnets. The infrastructure is defined using Terraform, and the code can be stored and managed via GitHub.
 
 
+# Architecture Diagram
+
+
+![Copy of Untitled Diagram drawio](https://github.com/user-attachments/assets/eb435444-9ae7-41bc-b4d0-c9ad000979a0)
+
+
+Create a simple text or graphical representation of the architecture, illustrating:
+
+VPC: Central element with CIDR 192.168.0.0/26.
+
+Subnets: Public and private subnets across AZs ap-south-1a and ap-south-1b.
+
+Instances: Represented within the public and private subnets.
+
+Gateways: Internet Gateway attached to the VPC and NAT Gateway within the public subnet.
+
+
+
 # Architecture Overview
 
 ## VPC:
@@ -130,22 +148,33 @@ Here's a structured example for configuring Terraform files to create a VPC with
 
 .
 ├── main.tf
+
 ├── variables.tf
+
 ├── ami.tf
+
 ├── aws_credentials.tf
+
 ├── .terraformignore
 
 
 # Explanation of Resources
 
 VPC: Created with CIDR 192.168.0.0/26.
-Subnets: Two public subnets (192.168.0.0/26 and 192.168.0.64/26) and two private subnets (192.168.0.128/26 and 192.168.0.192/26) are created across two AZs (ap-south-1a and ap-south-1b).
+
+Subnets: Two public subnets (192.168.0.0/26 and 192.168.0.64/26) and two private subnets (192.168.0.128/26 and 192.
+
+168.0.192/26) are created across two AZs (ap-south-1a and ap-south-1b).
+
 Internet Gateway: Provides internet access for public subnets.
+
 NAT Gateway: Allows instances in private subnets to access the internet.
+
 Route Tables: Public route table is associated with the public subnets, and a private route table with a NAT route is associated with the private subnets.
+
 Instances: EC2 instances are created in both the public and private subnets.
 
-# Replace "ami-0abcdef1234567890" with the AMI ID for the region you are working in.
+## Replace "ami-0abcdef1234567890" with the AMI ID for the region you are working in.
 
 
 # Terraform Configuration
@@ -203,10 +232,6 @@ To avoid incurring unnecessary costs, you can delete the infrastructure using:
 Below is a simple example of the main.tf code to create a VPC, subnets, instances, internet gateway, and NAT gateway in AWS.
 
 
-
-
-# Create instances, internet gateway, and NAT gateway here:
-
 #### Troubleshooting
 
 Terraform Errors: Ensure your AWS credentials are correctly set and the CLI can access your account.
@@ -214,5 +239,6 @@ Terraform Errors: Ensure your AWS credentials are correctly set and the CLI can 
 Resource Limits: If AWS imposes limits (e.g., IP allocation), ensure your configurations fit within your quota.
 
 Public IP Access: Ensure security groups allow inbound traffic for public instance access.
+
 
 ### This README file should provide all necessary steps to set up the specified AWS infrastructure, deploy it using Terraform, and store the code in GitHub.
