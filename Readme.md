@@ -1,14 +1,3 @@
-# Rreadme 
-
-# Architecture Diagram
-
-Create a simple text or graphical representation of the architecture, illustrating:
-
-VPC: Central element with CIDR 192.168.0.0/26.
-Subnets: Public and private subnets across AZs ap-south-1a and ap-south-1b.
-Instances: Represented within the public and private subnets.
-Gateways: Internet Gateway attached to the VPC and NAT Gateway within the public subnet.
-
 
 ##### Here's a README file for creating the VPC, subnets, instances, internet gateway, NAT gateway, and associated Terraform code for deployment in AWS. It also covers storing the Terraform code on GitHub.
 
