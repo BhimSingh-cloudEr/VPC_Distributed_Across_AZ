@@ -1,5 +1,5 @@
 
-##### Here's a README file for creating the VPC, subnets, instances, internet gateway, NAT gateway, and associated Terraform code for deployment in AWS. It also covers storing the Terraform code on GitHub.
+## Here's a README file for creating the VPC, subnets, instances, internet gateway, NAT gateway, and associated Terraform code for deployment in AWS. It also covers storing the Terraform code on GitHub.
 
 AWS VPC, Subnets, Instances, and Gateways Setup using Terraform
 
